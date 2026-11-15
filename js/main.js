@@ -1,6 +1,6 @@
 /**
- * LUXURY CHRISTIAN WEDDING INVITATION - SCRIPT
- * Chi. Sow. Sravanthi (Vissakoti Family) & Chi. John Wesley
+ * LUXURY CHRISTIAN RECEPTION INVITATION - SCRIPT
+ * Chi. Sow. Sravani (Vissakoti Family) & Chi. John Wesley
  * November 26, 2026 | 10:00 AM Onwards
  * Feature: Continuous Vertical Center Stream (Zero Cards, Blended Typography, Scroll Animations)
  */
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.className = 'state-playing';
 
     // Start background music
-    startWeddingAmbiance();
+    startReceptionAmbiance();
 
     if (bgVideo) {
       bgVideo.currentTime = 0;
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Target: November 26, 2026, 10:00:00 AM IST (+05:30)
   // ==========================================
 
-  const weddingTargetTime = new Date('2026-11-26T10:00:00+05:30').getTime();
+  const receptionTargetTime = new Date('2026-11-26T10:00:00+05:30').getTime();
 
   const daysElem = document.getElementById('days');
   const hoursElem = document.getElementById('hours');
@@ -257,7 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateCountdown() {
     const now = new Date().getTime();
-    const distance = weddingTargetTime - now;
+    const distance = receptionTargetTime - now;
 
     if (distance <= 0) {
       if (daysElem) daysElem.innerText = '00';
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: "Uncle David & Family (Vissakoti)",
       time: "2 days ago",
-      message: "May God Almighty shower His richest blessings upon our dear Sravanthi & John Wesley."
+      message: "May God Almighty shower His richest blessings upon our dear Sravani & John Wesley."
     },
     {
       name: "Pastor Samuel & Grace",
@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const newWish = {
         name: name + (attendance === 'Yes' ? ` (${guests})` : ' (Sending Prayers)'),
         time: 'Just now',
-        message: message || "May God Almighty shower His richest blessings upon Sravanthi & John Wesley!"
+        message: message || "May God Almighty shower His richest blessings upon Sravani & John Wesley!"
       };
 
       const wishes = getStoredWishes();
@@ -442,7 +442,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function startWeddingAmbiance() {
+  function startReceptionAmbiance() {
     isMusicPlaying = true;
     updateMusicButtonUI();
 
@@ -484,7 +484,7 @@ document.addEventListener('DOMContentLoaded', () => {
         audioContext.suspend();
       }
     } else {
-      startWeddingAmbiance();
+      startReceptionAmbiance();
     }
     updateMusicButtonUI();
   }
@@ -497,11 +497,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isMusicPlaying) {
       toggleMusicBtn.classList.add('playing');
       toggleMusicBtn.innerHTML = SVG_MUSIC_ON;
-      toggleMusicBtn.setAttribute('data-tooltip', 'Pause Wedding Music');
+      toggleMusicBtn.setAttribute('data-tooltip', 'Pause Reception Music');
     } else {
       toggleMusicBtn.classList.remove('playing');
       toggleMusicBtn.innerHTML = SVG_MUSIC_OFF;
-      toggleMusicBtn.setAttribute('data-tooltip', 'Play Wedding Music');
+      toggleMusicBtn.setAttribute('data-tooltip', 'Play Reception Music');
     }
   }
 
