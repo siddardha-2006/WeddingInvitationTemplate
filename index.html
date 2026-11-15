@@ -22,7 +22,7 @@
     rel="stylesheet">
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=5.0">
+  <link rel="stylesheet" href="css/style.css?v=5.1">
 </head>
 
 <body class="state-initial">
@@ -350,316 +350,350 @@
     </div>
   </div>
 
-    <!-- Background Music Audio Track -->
-    <audio id="bgAudio" loop preload="auto" src="audio_bgm.mp3">
-      <source src="audio_bgm.mp3" type="audio/mpeg">
-    </audio>
+  <!-- Background Music Audio Track -->
+  <audio id="bgAudio" loop preload="auto" src="audio_bgm.mp3">
+    <source src="audio_bgm.mp3" type="audio/mpeg">
+  </audio>
 
-    <!-- Skip Video Button (visible during video playback) -->
-    <button id="skipVideoBtn" class="skip-video-btn" aria-label="Skip to details">
-      Skip to Details
-    </button>
+  <!-- Skip Video Button (visible during video playback) -->
+  <button id="skipVideoBtn" class="skip-video-btn" aria-label="Skip to details">
+    Skip to Details
+  </button>
 
-    <!-- =================================================================
+  <!-- =================================================================
        TAP TO OPEN INTRO GATE OVERLAY
        ================================================================= -->
-    <div class="intro-gate-overlay" id="doorOpeningScreen">
-      <div class="gate-content">
-        <button class="tap-seal-btn" id="tapToOpenBtn" aria-label="Tap to Open">
-          <span class="pulse-ring"></span>
-          <span>Tap to Open</span>
-        </button>
-      </div>
+  <div class="intro-gate-overlay" id="doorOpeningScreen">
+    <div class="gate-content">
+      <button class="tap-seal-btn" id="tapToOpenBtn" aria-label="Tap to Open">
+        <span class="pulse-ring"></span>
+        <span>Tap to Open</span>
+      </button>
     </div>
+  </div>
 
-    <!-- =================================================================
+  <!-- =================================================================
        FLOATING AUDIO & REPLAY CONTROLS
        ================================================================= -->
-    <div class="floating-controls">
-      <button class="control-circle-btn" id="toggleMusicBtn" data-tooltip="Play Reception Music"
-        aria-label="Toggle background music">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
-        </svg>
-      </button>
-      <button class="control-circle-btn active" id="togglePetalsBtn" data-tooltip="Pause Falling Petals"
-        aria-label="Toggle falling lavender petals">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-          <path d="M12 2.5C9 6.5 6 10.5 6 14.5c0 4 3 6.5 6 6.5s6-2.5 6-6.5c0-4-3-8-6-12z" />
-          <path d="M12 6c-1 3-2 6-1 9" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"
-            stroke-linecap="round" />
-        </svg>
-      </button>
-      <button class="control-circle-btn" id="replayVideoBtn" data-tooltip="Replay Opening Sequence"
-        aria-label="Replay door opening video">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round">
-          <path d="M1 4v6h6" />
-          <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
-        </svg>
-      </button>
-    </div>
+  <div class="floating-controls">
+    <button class="control-circle-btn" id="toggleMusicBtn" data-tooltip="Play Reception Music"
+      aria-label="Toggle background music">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+      </svg>
+    </button>
+    <button class="control-circle-btn active" id="togglePetalsBtn" data-tooltip="Pause Falling Petals"
+      aria-label="Toggle falling lavender petals">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M12 2.5C9 6.5 6 10.5 6 14.5c0 4 3 6.5 6 6.5s6-2.5 6-6.5c0-4-3-8-6-12z" />
+        <path d="M12 6c-1 3-2 6-1 9" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"
+          stroke-linecap="round" />
+      </svg>
+    </button>
+    <button class="control-circle-btn" id="replayVideoBtn" data-tooltip="Replay Opening Sequence"
+      aria-label="Replay door opening video">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1 4v6h6" />
+        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+      </svg>
+    </button>
+  </div>
 
-    <!-- Continuous Falling Lavender Petals Canvas -->
-    <canvas id="petalsCanvas" class="petals-canvas"></canvas>
+  <!-- Continuous Falling Lavender Petals Canvas -->
+  <canvas id="petalsCanvas" class="petals-canvas"></canvas>
 
-    <!-- Confetti Canvas for Celebrations -->
-    <canvas id="confettiCanvas"></canvas>
+  <!-- Confetti Canvas for Celebrations -->
+  <canvas id="confettiCanvas"></canvas>
 
-    <!-- SVG Clip Path Definition for Heart-Shaped Elements -->
-    <svg width="0" height="0" style="position: absolute; width: 0; height: 0; pointer-events: none;" aria-hidden="true">
-      <defs>
-        <clipPath id="heartClip" clipPathUnits="objectBoundingBox">
-          <path d="M 0.5, 0.24 
+  <!-- SVG Clip Path Definition for Heart-Shaped Elements -->
+  <svg width="0" height="0" style="position: absolute; width: 0; height: 0; pointer-events: none;" aria-hidden="true">
+    <defs>
+      <clipPath id="heartClip" clipPathUnits="objectBoundingBox">
+        <path d="M 0.5, 0.24 
                  C 0.38, 0.08, 0.20, 0.06, 0.09, 0.18 
                  C 0.005, 0.275, 0.025, 0.50, 0.16, 0.69 
                  C 0.255, 0.825, 0.41, 0.91, 0.50, 0.99 
                  C 0.59, 0.91, 0.745, 0.825, 0.84, 0.69 
                  C 0.975, 0.50, 0.995, 0.275, 0.91, 0.18 
                  C 0.80, 0.06, 0.62, 0.08, 0.50, 0.24 Z" />
-        </clipPath>
-      </defs>
-    </svg>
+      </clipPath>
+    </defs>
+  </svg>
 
-    <!-- =================================================================
+  <!-- =================================================================
        CENTER-STAGE STREAM (Blended with Background, Zero Cards)
        Continuous Vertical Scroll with Cinematic Scroll Animations
        ================================================================= -->
-    <main class="invite-stream-stage" id="streamStage">
+  <main class="invite-stream-stage" id="streamStage">
 
-      <!-- Scrollable Center Stream (Masked at Top/Bottom to Blend Seamlessly) -->
-      <div class="stream-scroll-container" id="streamScrollContainer">
-        <div class="stream-content">
+    <!-- Scrollable Center Stream (Masked at Top/Bottom to Blend Seamlessly) -->
+    <div class="stream-scroll-container" id="streamScrollContainer">
+      <div class="stream-content">
 
-          <!-- ==================== FIRST PAGE: "Vissakoti's Invite" & COUPLE ====================
+        <!-- ==================== FIRST PAGE: "Vissakoti's Invite" & COUPLE ====================
              Pulled up from bottom upon video completion.
              Only "Vissakoti's Invite" (Big Gold Shine) + Bride & Groom names with a Heart symbol. -->
-          <section class="first-page-section" id="sectionFirstPage">
+        <section class="first-page-section" id="sectionFirstPage">
 
-            <!-- Middle Layer (Z-Axis): Romantic Ambient Image Backdrop (Behind Text, Above Card Background) -->
-            <div class="first-page-text-backdrop" aria-hidden="true">
-              <img src="couple_bouquet.webp" alt="" class="first-page-backdrop-img" loading="eager">
+          <!-- Middle Layer (Z-Axis): Romantic Ambient Image Backdrop (Behind Text, Above Card Background) -->
+          <div class="first-page-text-backdrop" aria-hidden="true">
+            <img src="couple_bouquet.webp" alt="" class="first-page-backdrop-img" loading="eager">
+          </div>
+
+          <div class="first-page-element anim-delay-1 ornament-cross-glow">✝</div>
+
+          <!-- Main Big Text with Golden Shine & Colour: "Vissakoti's Invite" -->
+          <h1 class="first-page-element anim-delay-2 vissakotis-invite-main">
+            <span class="gold-shine-text">Vissakoti's Invite</span>
+          </h1>
+
+          <div class="first-page-element anim-delay-3 gold-crest-accent">
+            <span class="crest-line"></span>
+            <span class="crest-diamond">❖</span>
+            <span class="crest-line"></span>
+          </div>
+
+          <!-- Bride & Groom Names with Golden Heart Symbol -->
+          <div class="first-page-element anim-delay-4 hero-names-flow">
+            <div class="bride-glow-name">Sri. Venkateswara Rao</div>
+            <div class="names-heart-connector" aria-label="love">
+              <svg class="gold-heart-icon" viewBox="0 0 24 24" width="28" height="28">
+                <defs>
+                  <linearGradient id="goldHeartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fff5db" />
+                    <stop offset="30%" stop-color="#dfb76c" />
+                    <stop offset="70%" stop-color="#b88628" />
+                    <stop offset="100%" stop-color="#8c5d18" />
+                  </linearGradient>
+                </defs>
+                <path fill="url(#goldHeartGrad)"
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
             </div>
+            <div class="groom-glow-name">Smt. Ramani</div>
+          </div>
 
-            <div class="first-page-element anim-delay-1 ornament-cross-glow">✝</div>
+          <!-- Bouncing Scroll Down Prompt to enter scrolled celebration pages -->
+          <div class="first-page-element anim-delay-5 scroll-down-hint" id="scrollPrompt">
+            <span>Scroll for Celebration Details</span>
+            <div class="bounce-chevron">⌄</div>
+          </div>
+        </section>
 
-            <!-- Main Big Text with Golden Shine & Colour: "Vissakoti's Invite" -->
-            <h1 class="first-page-element anim-delay-2 vissakotis-invite-main">
-              <span class="gold-shine-text">Vissakoti's Invite</span>
-            </h1>
 
-            <div class="first-page-element anim-delay-3 gold-crest-accent">
-              <span class="crest-line"></span>
-              <span class="crest-diamond">❖</span>
-              <span class="crest-line"></span>
+        <!-- ==================== SECTION 2: CELEBRATION, DATE & TIME (Revealed upon Scroll) ==================== -->
+        <section class="stream-section scroll-reveal" id="sectionCelebration">
+          <div class="ornament-cross-glow">✝</div>
+          <p class="blessing-eyebrow">With the Heavenly Blessings of God Almighty</p>
+          <p class="invitation-lead">
+            The Vissakoti Family cordially requests the honour of your presence and prayers at the Reception of
+            their beloved daughter
+          </p>
+
+          <div class="gold-filigree-divider">✦ ❖ ✦</div>
+
+          <div class="section-label-gold">DATE & CELEBRATION</div>
+          <h2 class="stream-title">The Reception Day</h2>
+
+          <div class="wedding-time-callout">
+            <div class="callout-date">THURSDAY, 26TH NOVEMBER 2026</div>
+            <div class="callout-time">10:00 AM IST ONWARDS</div>
+            <div class="callout-lunch">Followed by Celebratory Reception Feast (Lunch)</div>
+          </div>
+
+          <!-- Real-Time Countdown (Floating Gold Numbers, Zero Cards) -->
+          <div class="blended-countdown" id="countdownTimer">
+            <div class="count-block">
+              <span class="count-val" id="days">00</span>
+              <span class="count-unit">DAYS</span>
             </div>
+            <span class="count-colon">:</span>
+            <div class="count-block">
+              <span class="count-val" id="hours">00</span>
+              <span class="count-unit">HOURS</span>
+            </div>
+            <span class="count-colon">:</span>
+            <div class="count-block">
+              <span class="count-val" id="minutes">00</span>
+              <span class="count-unit">MINS</span>
+            </div>
+            <span class="count-colon">:</span>
+            <div class="count-block">
+              <span class="count-val" id="seconds">00</span>
+              <span class="count-unit">SECS</span>
+            </div>
+          </div>
 
-            <!-- Bride & Groom Names with Golden Heart Symbol -->
-            <div class="first-page-element anim-delay-4 hero-names-flow">
-              <div class="bride-glow-name">Sri. Venkateswara Rao</div>
-              <div class="names-heart-connector" aria-label="love">
-                <svg class="gold-heart-icon" viewBox="0 0 24 24" width="28" height="28">
-                  <defs>
-                    <linearGradient id="goldHeartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#fff5db" />
-                      <stop offset="30%" stop-color="#dfb76c" />
-                      <stop offset="70%" stop-color="#b88628" />
-                      <stop offset="100%" stop-color="#8c5d18" />
-                    </linearGradient>
-                  </defs>
-                  <path fill="url(#goldHeartGrad)"
-                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                </svg>
+          <div class="hero-actions-row">
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Reception:+Chi.+Sow.+Sravani+%26+Chi.+John+Wesley&dates=20261126T043000Z/20261126T093000Z&details=Reception+of+Chi.+Sow.+Sravani+(Vissakoti+Family)+%26+Chi.+John+Wesley.+Celebration+starts+at+10:00+AM+followed+by+reception+lunch.&location=Bride%27s+Residence+(Vissakoti+Home),+https://www.google.com/maps?q=16.9538734,81.8224046"
+              target="_blank" rel="noopener noreferrer" class="btn-royal-gold">
+              Add to Calendar
+            </a>
+          </div>
+
+          <div class="gold-filigree-divider">✦ ❖ ✦</div>
+        </section>
+
+
+        <!-- ==================== SECTION 2: SCRIPTURE & COUPLE ==================== -->
+        <section class="stream-section scroll-reveal" id="sectionCouple">
+          <div class="ornament-cross-glow">✝</div>
+          <div class="section-label-gold">HOLY SCRIPTURE</div>
+
+          <blockquote class="blended-scripture-quote">
+            “Two are better than one, because they have a good return for their labor... A cord of three strands is
+            not
+            quickly broken.”
+          </blockquote>
+          <div class="scripture-citation">Ecclesiastes 4:9, 12</div>
+
+          <div class="gold-filigree-divider">✦ ❖ ✦</div>
+
+          <!-- Heart-Shaped Interactive Scratch Card (Reveals Couple Photo) -->
+          <div class="heart-scratch-container" id="heartScratchContainer">
+            <div class="heart-scratch-frame">
+
+              <!-- Underneath: Romantic Couple Portrait Clipped to Heart -->
+              <div class="heart-photo-layer">
+                <img src="couple_heart.webp" alt="Chi. Sow. Sravani & Chi. John Wesley" class="heart-photo-img"
+                  loading="eager">
               </div>
-              <div class="groom-glow-name">Smt. Ramani</div>
-            </div>
 
-            <!-- Bouncing Scroll Down Prompt to enter scrolled celebration pages -->
-            <div class="first-page-element anim-delay-5 scroll-down-hint" id="scrollPrompt">
-              <span>Scroll for Celebration Details</span>
-              <div class="bounce-chevron">⌄</div>
-            </div>
-          </section>
+              <!-- Over: Interactive Scratchable Champagne-Gold Foil Canvas -->
+              <canvas id="heartScratchCanvas" class="heart-scratch-canvas"></canvas>
 
-
-          <!-- ==================== SECTION 2: CELEBRATION, DATE & TIME (Revealed upon Scroll) ==================== -->
-          <section class="stream-section scroll-reveal" id="sectionCelebration">
-            <div class="ornament-cross-glow">✝</div>
-            <p class="blessing-eyebrow">With the Heavenly Blessings of God Almighty</p>
-            <p class="invitation-lead">
-              The Vissakoti Family cordially requests the honour of your presence and prayers at the Reception of
-              their beloved daughter
-            </p>
-
-            <div class="gold-filigree-divider">✦ ❖ ✦</div>
-
-            <div class="section-label-gold">DATE & CELEBRATION</div>
-            <h2 class="stream-title">The Reception Day</h2>
-
-            <div class="wedding-time-callout">
-              <div class="callout-date">THURSDAY, 26TH NOVEMBER 2026</div>
-              <div class="callout-time">10:00 AM IST ONWARDS</div>
-              <div class="callout-lunch">Followed by Celebratory Reception Feast (Lunch)</div>
-            </div>
-
-            <!-- Real-Time Countdown (Floating Gold Numbers, Zero Cards) -->
-            <div class="blended-countdown" id="countdownTimer">
-              <div class="count-block">
-                <span class="count-val" id="days">00</span>
-                <span class="count-unit">DAYS</span>
-              </div>
-              <span class="count-colon">:</span>
-              <div class="count-block">
-                <span class="count-val" id="hours">00</span>
-                <span class="count-unit">HOURS</span>
-              </div>
-              <span class="count-colon">:</span>
-              <div class="count-block">
-                <span class="count-val" id="minutes">00</span>
-                <span class="count-unit">MINS</span>
-              </div>
-              <span class="count-colon">:</span>
-              <div class="count-block">
-                <span class="count-val" id="seconds">00</span>
-                <span class="count-unit">SECS</span>
-              </div>
-            </div>
-
-            <div class="hero-actions-row">
-              <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Reception:+Chi.+Sow.+Sravani+%26+Chi.+John+Wesley&dates=20261126T043000Z/20261126T093000Z&details=Reception+of+Chi.+Sow.+Sravani+(Vissakoti+Family)+%26+Chi.+John+Wesley.+Celebration+starts+at+10:00+AM+followed+by+reception+lunch.&location=Bride%27s+Residence+(Vissakoti+Home),+https://www.google.com/maps?q=16.9538734,81.8224046"
-                target="_blank" rel="noopener noreferrer" class="btn-royal-gold">
-                Add to Calendar
-              </a>
-            </div>
-
-            <div class="gold-filigree-divider">✦ ❖ ✦</div>
-          </section>
-
-
-          <!-- ==================== SECTION 2: SCRIPTURE & COUPLE ==================== -->
-          <section class="stream-section scroll-reveal" id="sectionCouple">
-            <div class="ornament-cross-glow">✝</div>
-            <div class="section-label-gold">HOLY SCRIPTURE</div>
-
-            <blockquote class="blended-scripture-quote">
-              “Two are better than one, because they have a good return for their labor... A cord of three strands is
-              not
-              quickly broken.”
-            </blockquote>
-            <div class="scripture-citation">Ecclesiastes 4:9, 12</div>
-
-            <div class="gold-filigree-divider">✦ ❖ ✦</div>
-
-            <!-- Heart-Shaped Interactive Scratch Card (Reveals Couple Photo) -->
-            <div class="heart-scratch-container" id="heartScratchContainer">
-              <div class="heart-scratch-frame">
-
-                <!-- Underneath: Romantic Couple Portrait Clipped to Heart -->
-                <div class="heart-photo-layer">
-                  <img src="couple_heart.webp" alt="Chi. Sow. Sravani & Chi. John Wesley" class="heart-photo-img"
-                    loading="eager">
-                </div>
-
-                <!-- Over: Interactive Scratchable Champagne-Gold Foil Canvas -->
-                <canvas id="heartScratchCanvas" class="heart-scratch-canvas"></canvas>
-
-                <!-- Gold Filigree Heart Border Frame -->
-                <svg class="heart-frame-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-                  <defs>
-                    <linearGradient id="heartGoldBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stop-color="#fff6dd" />
-                      <stop offset="25%" stop-color="#e5c073" />
-                      <stop offset="60%" stop-color="#b88628" />
-                      <stop offset="85%" stop-color="#fcedcb" />
-                      <stop offset="100%" stop-color="#8c5d18" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M 50, 24 
+              <!-- Gold Filigree Heart Border Frame -->
+              <svg class="heart-frame-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="heartGoldBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fff6dd" />
+                    <stop offset="25%" stop-color="#e5c073" />
+                    <stop offset="60%" stop-color="#b88628" />
+                    <stop offset="85%" stop-color="#fcedcb" />
+                    <stop offset="100%" stop-color="#8c5d18" />
+                  </linearGradient>
+                </defs>
+                <path d="M 50, 24 
                          C 38, 8, 20, 6, 9, 18 
                          C 0.5, 27.5, 2.5, 50, 16, 69 
                          C 25.5, 82.5, 41, 91, 50, 99 
                          C 59, 91, 74.5, 82.5, 84, 69 
                          C 97.5, 50, 99.5, 27.5, 91, 18 
                          C 80, 6, 62, 8, 50, 24 Z" fill="none" stroke="url(#heartGoldBorderGrad)" stroke-width="2.6" />
-                </svg>
+              </svg>
+            </div>
+
+            <!-- Scratch Instruction / Reveal Status Badge -->
+            <button class="scratch-instruction-pill" id="scratchInstruction" aria-label="Scratch to reveal photo">
+              <span class="scratch-sparkle">✦</span>
+              <span class="scratch-text">Scratch the Heart to Reveal</span>
+              <span class="scratch-sparkle">✦</span>
+            </button>
+
+            <!-- Revealed Caption -->
+            <div class="revealed-couple-caption" id="revealedCoupleCaption">
+              <h3 class="revealed-names">Chi. Sow. Sravani <br> & <br> Chi. John Wesley</h3>
+            </div>
+          </div>
+
+          <p class="scripture-sub-blessing">
+            “Therefore what God has joined together, let no one separate.”<br>
+            <span style="font-size: 0.85em; color: #f5dfa8;">— Mark 10:9</span>
+          </p>
+        </section>
+
+
+        <!-- ==================== SECTION 3: THE VENUE ==================== -->
+        <section class="stream-section scroll-reveal" id="sectionVenue">
+          <div class="ornament-cross-glow">✝</div>
+          <div class="section-label-gold">LOCATION & DIRECTIONS</div>
+          <h2 class="stream-title">The Reception Venue</h2>
+
+          <div class="venue-home-mark">
+            <span>Ceremony & Feast at Bride's Home</span>
+          </div>
+
+          <h3 class="venue-house-name">Vissakoti Residence</h3>
+
+          <div class="venue-directions-blurb">
+            <p><strong>VISSAKOTI Home</strong></p>
+            <p>At the Bride's Home</p>
+            <p class="venue-note"><em>Explore the live map preview or tap below for turn-by-turn directions</em></p>
+          </div>
+
+          <!-- Interactive Google Maps Preview Frame -->
+          <div class="map-preview-wrapper">
+            <div class="map-preview-frame">
+              <!-- Top Decorative Header Bar -->
+              <div class="map-header-bar">
+                <span class="map-pin-badge">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                  </svg>
+                  <span>Vissakoti Residence</span>
+                </span>
+                <span class="map-coords-pill">16.9538° N, 81.8224° E</span>
               </div>
 
-              <!-- Scratch Instruction / Reveal Status Badge -->
-              <button class="scratch-instruction-pill" id="scratchInstruction" aria-label="Scratch to reveal photo">
-                <span class="scratch-sparkle">✦</span>
-                <span class="scratch-text">Scratch the Heart to Reveal</span>
-                <span class="scratch-sparkle">✦</span>
-              </button>
-
-              <!-- Revealed Caption -->
-              <div class="revealed-couple-caption" id="revealedCoupleCaption">
-                <h3 class="revealed-names">Chi. Sow. Sravani <br> & <br> Chi. John Wesley</h3>
+              <!-- Live Google Map Iframe -->
+              <div class="map-iframe-container">
+                <iframe
+                  id="googleMapsIframe"
+                  title="Reception Venue Location - Vissakoti Residence"
+                  src="https://maps.google.com/maps?q=16.9538734,81.8224046&amp;hl=en&amp;z=16&amp;output=embed"
+                  width="100%"
+                  height="210"
+                  style="border:0;"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
               </div>
             </div>
+          </div>
 
-            <p class="scripture-sub-blessing">
-              “Therefore what God has joined together, let no one separate.”<br>
-              <span style="font-size: 0.85em; color: #f5dfa8;">— Mark 10:9</span>
-            </p>
-          </section>
-
-
-          <!-- ==================== SECTION 3: THE VENUE ==================== -->
-          <section class="stream-section scroll-reveal" id="sectionVenue">
-            <div class="ornament-cross-glow">✝</div>
-            <div class="section-label-gold">LOCATION & DIRECTIONS</div>
-            <h2 class="stream-title">The Reception Venue</h2>
-
-            <div class="venue-home-mark">
-              <span>Ceremony & Feast at Bride's Home</span>
-            </div>
-
-            <h3 class="venue-house-name">Vissakoti Residence</h3>
-
-            <div class="venue-directions-blurb">
-              <p><strong>VISSAKOTI Home</strong></p>
-              <p>At the Bride's Home</p>
-              <p class="venue-note"><em>Tap below for directions & live navigation</em></p>
-            </div>
-
-            <a href="https://www.google.com/maps?q=16.9538734,81.8224046&amp;z=17&amp;hl=en" id="googleMapsBtn"
-              target="_blank" rel="noopener noreferrer" class="btn-royal-gold">
-              Open in Google Maps
-            </a>
-          </section>
+          <a href="https://www.google.com/maps?q=16.9538734,81.8224046&amp;z=17&amp;hl=en" id="googleMapsBtn"
+            target="_blank" rel="noopener noreferrer" class="btn-royal-gold btn-maps-action">
+            <svg class="maps-btn-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+            </svg>
+            <span>Open in Google Maps</span>
+          </a>
+        </section>
 
 
-          <!-- ==================== SECTION 4: FOOTER BENEDICTION ==================== -->
-          <footer class="stream-section stream-footer scroll-reveal">
-            <div class="ornament-cross-glow">✝</div>
-            <p class="footer-family-thanks">
-              “The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you.”<br>
-              <span style="font-size: 0.85em; color: #f5dfa8;">— Numbers 6:24-25</span>
-            </p>
-            <div class="gold-filigree-divider">✦ ✦ ✦</div>
-            <h4 class="footer-family-name">THE VISSAKOTI FAMILY</h4>
-            <p class="footer-couple-sig">Chi. Sow. Sravani <br> & <br> Chi. John Wesley</p>
+        <!-- ==================== SECTION 4: FOOTER BENEDICTION ==================== -->
+        <footer class="stream-section stream-footer scroll-reveal">
+          <div class="ornament-cross-glow">✝</div>
+          <p class="footer-family-thanks">
+            “The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you.”<br>
+            <span style="font-size: 0.85em; color: #f5dfa8;">— Numbers 6:24-25</span>
+          </p>
+          <div class="gold-filigree-divider">✦ ✦ ✦</div>
+          <h4 class="footer-family-name">THE VISSAKOTI FAMILY</h4>
+          <p class="footer-couple-sig">Chi. Sow. Sravani <br> & <br> Chi. John Wesley</p>
 
-            <!-- Special Invitation from Oreo (Square Shiny Frame) -->
-            <div class="oreo-invite-wrap">
-              <div class="oreo-shiny-frame">
-                <div class="oreo-frame-glare"></div>
-                <div class="oreo-photo-inner">
-                  <img src="oreo.webp" alt="Oreo" class="oreo-photo-img" loading="lazy">
-                </div>
+          <!-- Special Invitation from Oreo (Square Shiny Frame) -->
+          <div class="oreo-invite-wrap">
+            <div class="oreo-shiny-frame">
+              <div class="oreo-frame-glare"></div>
+              <div class="oreo-photo-inner">
+                <img src="oreo.webp" alt="Oreo" class="oreo-photo-img" loading="lazy">
               </div>
-              <p class="oreo-caption">-A cute and special invitation from Oreo 🐾🤍</p>
             </div>
+            <p class="oreo-caption">-A cute and special invitation from Oreo 🐾🤍</p>
+          </div>
 
-            <button class="btn-scroll-top" id="scrollTopBtn">Back to Top ↑</button>
-          </footer>
+          <button class="btn-scroll-top" id="scrollTopBtn">Back to Top ↑</button>
+        </footer>
 
-        </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <!-- Main JavaScript -->
-    <script src="js/main.js?v=5.0"></script>
+  <!-- Main JavaScript -->
+  <script src="js/main.js?v=5.0"></script>
 </body>
 
 </html>

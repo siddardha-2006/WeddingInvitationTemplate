@@ -1294,6 +1294,103 @@ body.state-revealed .first-page-text-backdrop {
   margin-top: 4px;
 }
 
+/* ---------- Interactive Google Maps Preview Frame ---------- */
+.map-preview-wrapper {
+  width: 100%;
+  max-width: 320px;
+  margin: 14px auto 16px;
+  position: relative;
+}
+
+.map-preview-frame {
+  position: relative;
+  border-radius: 16px;
+  border: 1.5px solid rgba(207, 162, 75, 0.7);
+  box-shadow: 
+    0 10px 28px rgba(36, 10, 47, 0.45),
+    0 0 18px rgba(207, 162, 75, 0.25),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  background: rgba(36, 10, 47, 0.85);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.map-preview-frame:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 14px 34px rgba(36, 10, 47, 0.55),
+    0 0 24px rgba(207, 162, 75, 0.38);
+  border-color: rgba(245, 223, 168, 0.9);
+}
+
+.map-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 12px;
+  background: linear-gradient(135deg, rgba(61, 14, 79, 0.95), rgba(36, 10, 47, 0.98));
+  border-bottom: 1px solid rgba(207, 162, 75, 0.35);
+  font-family: var(--font-sans);
+}
+
+.map-pin-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #fceecb;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.map-pin-badge svg {
+  color: #dfb76c;
+  flex-shrink: 0;
+}
+
+.map-coords-pill {
+  font-size: 0.6rem;
+  color: #dfb76c;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 7px;
+  border-radius: 8px;
+  border: 1px solid rgba(207, 162, 75, 0.25);
+}
+
+.map-iframe-container {
+  width: 100%;
+  height: 210px;
+  position: relative;
+  background: #240a2f;
+}
+
+.map-iframe-container iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: contrast(1.03) saturate(1.08);
+}
+
+.btn-maps-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 4px;
+  padding: 11px 24px;
+}
+
+.maps-btn-icon {
+  flex-shrink: 0;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
+
 /* ---------- Section 5: Blended RSVP Form & Wishes ---------- */
 .blended-form {
   width: 100%;
