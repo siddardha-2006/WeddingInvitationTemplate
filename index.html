@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Wedding Invitation | Chi. Sow. Sravanthi & Chi. John Wesley</title>
+
+  <!-- SEO & Social Sharing Meta Tags -->
+  <meta name="description"
+    content="Wedding Invitation from the Vissakoti Family: Holy Matrimony of Chi. Sow. Sravanthi & Chi. John Wesley on November 26, 2026.">
+  <meta property="og:title" content="Holy Matrimony: Chi. Sow. Sravanthi & Chi. John Wesley">
+  <meta property="og:description"
+    content="The Vissakoti Family cordially invites you to the Holy Matrimony on November 26, 2026 from 10:00 AM onwards followed by lunch.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400;1,600&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=4.8">
+</head>
+
+<body class="state-initial">
+
+  <!-- =================================================================
+       BACKGROUND CONTAINER: Video Intro + Revealed Image Background
+       ================================================================= -->
+  <div class="video-bg-container">
+    <video id="bgVideo" playsinline muted preload="auto">
+      <source src="weddinginvitecard.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- Revealed High-Resolution Wedding Card Background (Zero Blur, Zoomed) -->
+    <div class="revealed-bg-image" id="revealedBgImage" aria-hidden="true"></div>
+  </div>
+  <div class="video-overlay"></div>
+
+  <!-- =================================================================
+       ROYAL FLORAL FRAME & DECORATIVE BORDER OVERLAY
+       Sharp vector floral corner bouquets, golden hairline borders & garlands
+       framing the blurred romantic backdrop
+       ================================================================= -->
+  <div class="floral-frame-overlay" id="floralFrameOverlay" aria-hidden="true">
+    <!-- Double Golden Hairline Frame with Ornate Corner Motifs -->
+    <div class="golden-screen-border">
+      <div class="border-corner-flourish flourish-tl">❖</div>
+      <div class="border-corner-flourish flourish-tr">❖</div>
+      <div class="border-corner-flourish flourish-bl">❖</div>
+      <div class="border-corner-flourish flourish-br">❖</div>
+    </div>
+
+    <!-- Reusable SVG Definitions for Garden Roses, Foliage & Gold Tendrils -->
+    <svg class="floral-defs-svg" width="0" height="0" style="position: absolute; pointer-events: none;">
+      <defs>
+        <!-- Gradients -->
+        <radialGradient id="ffRoseCore" cx="45%" cy="40%" r="55%">
+          <stop offset="0%" stop-color="#3d0e4f" />
+          <stop offset="35%" stop-color="#6a237e" />
+          <stop offset="70%" stop-color="#9d50b4" />
+          <stop offset="100%" stop-color="#c17ed2" />
+        </radialGradient>
+        <radialGradient id="ffRosePetal" cx="35%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="#faedfd" />
+          <stop offset="35%" stop-color="#e3bbf2" />
+          <stop offset="70%" stop-color="#b672c9" />
+          <stop offset="100%" stop-color="#7c3791" />
+        </radialGradient>
+        <radialGradient id="ffRoseOuter" cx="50%" cy="50%" r="55%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="45%" stop-color="#f3dbf8" />
+          <stop offset="80%" stop-color="#caa0db" />
+          <stop offset="100%" stop-color="#9a52ae" />
+        </radialGradient>
+        <linearGradient id="ffGoldLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#fff6dd" />
+          <stop offset="25%" stop-color="#e5c073" />
+          <stop offset="55%" stop-color="#c99532" />
+          <stop offset="75%" stop-color="#fcedcb" />
+          <stop offset="100%" stop-color="#946316" />
+        </linearGradient>
+        <linearGradient id="ffGoldStem" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f5e0a8" />
+          <stop offset="50%" stop-color="#cca249" />
+          <stop offset="100%" stop-color="#805412" />
+        </linearGradient>
+        <linearGradient id="ffSageLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#b8d2bc" />
+          <stop offset="40%" stop-color="#7da183" />
+          <stop offset="85%" stop-color="#4e7054" />
+          <stop offset="100%" stop-color="#2a4530" />
+        </linearGradient>
+        <linearGradient id="ffDeepLeaf" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#5c7d62" />
+          <stop offset="50%" stop-color="#345038" />
+          <stop offset="100%" stop-color="#1b2f1e" />
+        </linearGradient>
+        <radialGradient id="ffPearl" cx="35%" cy="35%" r="65%">
+          <stop offset="0%" stop-color="#ffffff" />
+          <stop offset="65%" stop-color="#fbf1fd" />
+          <stop offset="100%" stop-color="#e0c2ec" />
+        </radialGradient>
+        <filter id="ffShadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feDropShadow dx="2" dy="5" stdDeviation="6" flood-color="#15031d" flood-opacity="0.55" />
+        </filter>
+        <filter id="ffGlow" x="-25%" y="-25%" width="150%" height="150%">
+          <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#ffe69c" flood-opacity="0.75" />
+        </filter>
+
+        <!-- English Rose Bloom Symbol -->
+        <g id="sym-english-rose">
+          <!-- Outer Shadow -->
+          <circle cx="0" cy="0" r="48" fill="#2d0b38" opacity="0.4" filter="url(#ffShadow)" />
+          <!-- Outer Ruffled Petals -->
+          <path d="M -30,-48 C -10,-60 20,-60 40,-44 C 52,-25 45,5 30,10 C 5,5 -20,-10 -30,-48 Z"
+            fill="url(#ffRoseOuter)" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" />
+          <path d="M 35,-38 C 55,-25 65,5 58,28 C 45,45 15,50 0,42 C 10,20 20,-10 35,-38 Z" fill="url(#ffRoseOuter)"
+            stroke="rgba(255,255,255,0.4)" stroke-width="0.8" />
+          <path d="M 10,38 C 25,55 -5,68 -28,62 C -48,52 -55,25 -42,5 C -20,15 0,25 10,38 Z" fill="url(#ffRoseOuter)"
+            stroke="rgba(255,255,255,0.4)" stroke-width="0.8" />
+          <path d="M -42,10 C -60,20 -70,-8 -62,-30 C -52,-48 -25,-55 -8,-45 C -22,-20 -32,0 -42,10 Z"
+            fill="url(#ffRoseOuter)" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" />
+          <path d="M -20,-50 C -45,-42 -52,-20 -48,5 C -25,2 -10,-10 -20,-50 Z" fill="url(#ffRoseOuter)"
+            stroke="rgba(255,255,255,0.4)" stroke-width="0.8" />
+          <!-- Mid Petals -->
+          <path d="M -22,-28 C -5,-40 20,-38 30,-22 C 38,-5 30,18 18,22 C 0,15 -15,-5 -22,-28 Z"
+            fill="url(#ffRosePetal)" />
+          <path d="M 22,-18 C 38,-5 42,18 30,32 C 18,42 -5,40 -18,28 C -8,12 8,-2 22,-18 Z" fill="url(#ffRosePetal)" />
+          <path d="M -12,24 C -28,35 -40,15 -35,-8 C -30,-25 -10,-28 0,-18 C -5,2 -10,12 -12,24 Z"
+            fill="url(#ffRosePetal)" />
+          <path d="M -30,-8 C -38,-24 -18,-35 5,-30 C -5,-15 -18,-5 -30,-8 Z" fill="url(#ffRosePetal)" />
+          <!-- Inner Core Cups -->
+          <path d="M -15,-15 C -2,-24 15,-20 20,-8 C 24,5 15,18 5,20 C -8,14 -14,2 -15,-15 Z" fill="url(#ffRoseCore)" />
+          <path d="M 12,-10 C 22,2 18,18 4,22 C -10,24 -20,10 -15,-2 C -4,0 5,-5 12,-10 Z" fill="url(#ffRoseCore)" />
+          <path d="M -14,5 C -20,-8 -8,-20 8,-16 C 0,-6 -6,4 -14,5 Z" fill="url(#ffRoseCore)" />
+          <!-- Velvety Center Spiral -->
+          <path d="M -6,-5 C 2,-10 10,-4 8,3 C 6,9 -2,9 -6,5 C -9,2 -8,-3 -4,-5 C 0,-6 4,-2 3,2 C 2,5 -1,5 -3,3 Z"
+            fill="#3a0c49" stroke="#f0c2fb" stroke-width="1.2" />
+          <!-- Golden Stamens -->
+          <circle cx="1" cy="0" r="1.3" fill="#ffe38a" />
+          <circle cx="-1" cy="2" r="1" fill="#ffe38a" />
+          <circle cx="2" cy="-2" r="0.9" fill="#ffe38a" />
+        </g>
+
+        <!-- Rose Bud Symbol -->
+        <g id="sym-rose-bud">
+          <path d="M 0,20 C 0,30 -4,36 -2,42" stroke="url(#ffGoldStem)" stroke-width="2.2" stroke-linecap="round"
+            fill="none" />
+          <path d="M -8,16 C -18,22 -22,12 -20,6 C -15,10 -10,14 -8,16 Z" fill="url(#ffGoldLeaf)" />
+          <path d="M 8,16 C 18,22 22,12 20,6 C 15,10 10,14 8,16 Z" fill="url(#ffGoldLeaf)" />
+          <path d="M -5,18 C -18,8 -16,-12 -4,-24 C -1,-15 -2,5 -5,18 Z" fill="url(#ffRosePetal)" />
+          <path d="M 2,18 C 16,8 14,-14 2,-26 C 6,-12 4,6 2,18 Z" fill="url(#ffRoseOuter)" />
+          <path d="M -6,-16 C -2,-28 4,-28 8,-16 C 5,-8 -2,-8 -6,-16 Z" fill="url(#ffRoseCore)" />
+        </g>
+
+        <!-- Golden Eucalyptus Sprig Symbol -->
+        <g id="sym-gold-eucalyptus">
+          <path d="M 0,0 C 40,25 90,40 150,45" stroke="url(#ffGoldStem)" stroke-width="2.5" stroke-linecap="round"
+            fill="none" />
+          <path d="M 25,12 C 15,-2 32,-14 42,-4 C 48,4 38,16 25,12 Z" fill="url(#ffGoldLeaf)" filter="url(#ffGlow)" />
+          <path d="M 48,25 C 40,42 58,54 68,44 C 74,35 62,22 48,25 Z" fill="url(#ffGoldLeaf)" filter="url(#ffGlow)" />
+          <path d="M 75,34 C 70,16 90,8 98,20 C 104,28 92,40 75,34 Z" fill="url(#ffGoldLeaf)" filter="url(#ffGlow)" />
+          <path d="M 102,41 C 98,60 118,68 126,56 C 132,46 118,36 102,41 Z" fill="url(#ffGoldLeaf)"
+            filter="url(#ffGlow)" />
+          <path d="M 126,44 C 125,26 145,22 150,34 C 154,42 142,50 126,44 Z" fill="url(#ffGoldLeaf)"
+            filter="url(#ffGlow)" />
+          <path d="M 150,45 C 165,40 178,48 168,56 C 158,62 146,55 150,45 Z" fill="url(#ffGoldLeaf)"
+            filter="url(#ffGlow)" />
+        </g>
+
+        <!-- Sage Eucalyptus Sprig Symbol -->
+        <g id="sym-sage-eucalyptus">
+          <path d="M 0,0 C 35,30 80,55 135,70" stroke="#3b5941" stroke-width="2.2" stroke-linecap="round" fill="none" />
+          <path d="M 30,22 C 20,8 36,0 46,10 C 52,18 42,30 30,22 Z" fill="url(#ffSageLeaf)" />
+          <path d="M 58,38 C 52,55 70,64 80,52 C 86,42 72,32 58,38 Z" fill="url(#ffDeepLeaf)" />
+          <path d="M 88,52 C 82,34 102,26 110,38 C 116,46 104,58 88,52 Z" fill="url(#ffSageLeaf)" />
+          <path d="M 115,62 C 112,78 130,86 138,74 C 144,65 130,56 115,62 Z" fill="url(#ffDeepLeaf)" />
+          <path d="M 135,70 C 150,65 162,72 154,82 C 144,88 132,80 135,70 Z" fill="url(#ffSageLeaf)" />
+        </g>
+
+        <!-- Baby's Breath (Gypsophila) Spray Symbol -->
+        <g id="sym-babys-breath">
+          <path
+            d="M 0,0 C 25,15 50,22 80,25 M 35,18 C 45,5 65,-2 85,2 M 55,23 C 65,38 85,42 105,40 M 80,25 C 95,20 115,22 130,18"
+            stroke="#a39682" stroke-width="1.2" stroke-linecap="round" fill="none" />
+          <circle cx="80" cy="25" r="4.2" fill="url(#ffPearl)" />
+          <circle cx="80" cy="25" r="1.2" fill="#eed592" />
+          <circle cx="85" cy="2" r="3.8" fill="url(#ffPearl)" />
+          <circle cx="85" cy="2" r="1" fill="#eed592" />
+          <circle cx="105" cy="40" r="4" fill="url(#ffPearl)" />
+          <circle cx="105" cy="40" r="1.1" fill="#eed592" />
+          <circle cx="130" cy="18" r="3.5" fill="url(#ffPearl)" />
+          <circle cx="65" cy="-2" r="3" fill="url(#ffPearl)" />
+          <circle cx="45" cy="5" r="2.5" fill="url(#ffPearl)" />
+          <circle cx="65" cy="38" r="3.2" fill="url(#ffPearl)" />
+          <circle cx="95" cy="20" r="3" fill="url(#ffPearl)" />
+          <circle cx="115" cy="22" r="3.2" fill="url(#ffPearl)" />
+        </g>
+
+        <!-- Golden Baroque Swirl Tendril -->
+        <g id="sym-gold-swirl">
+          <path d="M 0,0 C 35,-15 80,-10 110,15 C 130,35 125,65 100,65 C 75,65 75,35 95,30 C 115,25 125,45 120,55"
+            stroke="url(#ffGoldStem)" stroke-width="2.2" fill="none" stroke-linecap="round" />
+          <circle cx="120" cy="55" r="2.5" fill="url(#ffGoldLeaf)" />
+          <path d="M 50,-5 C 55,-12 65,-12 68,-5 Z" fill="url(#ffGoldLeaf)" />
+          <path d="M 85,2 C 92,-4 100,-2 102,6 Z" fill="url(#ffGoldLeaf)" />
+        </g>
+
+        <!-- Complete Corner Floral Composition Group -->
+        <g id="sym-corner-bouquet">
+          <!-- Background Branches -->
+          <use href="#sym-gold-eucalyptus" transform="translate(45, 18) rotate(-4)" />
+          <use href="#sym-gold-eucalyptus" transform="translate(18, 45) rotate(94)" />
+          <use href="#sym-sage-eucalyptus" transform="translate(50, 50) rotate(38)" />
+          <!-- Golden Swirl Tendrils -->
+          <use href="#sym-gold-swirl" transform="translate(60, 22) scale(1.05)" />
+          <use href="#sym-gold-swirl" transform="translate(22, 60) scale(1.05) rotate(90)" />
+          <!-- Baby's Breath -->
+          <use href="#sym-babys-breath" transform="translate(85, 12) rotate(-8)" />
+          <use href="#sym-babys-breath" transform="translate(12, 85) rotate(92)" />
+          <use href="#sym-babys-breath" transform="translate(75, 75) rotate(36)" />
+          <!-- Background Leaves for Contrast -->
+          <path d="M 50,60 C 25,35 55,10 80,35 Z" fill="url(#ffDeepLeaf)" />
+          <path d="M 60,50 C 35,25 10,55 35,80 Z" fill="url(#ffDeepLeaf)" />
+          <!-- Outer Buds Along Edges -->
+          <use href="#sym-rose-bud" transform="translate(245, 38) rotate(78) scale(0.85)" />
+          <use href="#sym-rose-bud" transform="translate(38, 245) rotate(-12) scale(0.85)" />
+          <!-- Secondary Blooming Roses -->
+          <use href="#sym-english-rose" transform="translate(180, 55) scale(0.72) rotate(22)" />
+          <use href="#sym-english-rose" transform="translate(55, 180) scale(0.70) rotate(-38)" />
+          <!-- Grand Crown English Garden Rose (Main Corner Blossom) -->
+          <use href="#sym-english-rose" transform="translate(98, 98) scale(1.12) rotate(8)" />
+          <!-- Delicate Foreground Gypsophila Accents -->
+          <circle cx="140" cy="130" r="3.5" fill="url(#ffPearl)" />
+          <circle cx="148" cy="138" r="2.8" fill="url(#ffPearl)" />
+          <circle cx="132" cy="144" r="3" fill="url(#ffPearl)" />
+          <!-- Sparkle Accents -->
+          <polygon points="170,120 173,126 179,129 173,132 170,138 167,132 161,129 167,126" fill="#fff5d1"
+            opacity="0.85" />
+          <polygon points="120,170 123,176 129,179 123,182 120,188 117,182 111,179 117,176" fill="#fff5d1"
+            opacity="0.85" />
+        </g>
+      </defs>
+    </svg>
+
+    <!-- 4 Corner Floral Arrangements -->
+    <div class="floral-corner floral-corner-tl">
+      <svg viewBox="0 0 320 320" width="100%" height="100%">
+        <use href="#sym-corner-bouquet" />
+      </svg>
+    </div>
+    <div class="floral-corner floral-corner-tr">
+      <svg viewBox="0 0 320 320" width="100%" height="100%">
+        <use href="#sym-corner-bouquet" />
+      </svg>
+    </div>
+    <div class="floral-corner floral-corner-bl">
+      <svg viewBox="0 0 320 320" width="100%" height="100%">
+        <use href="#sym-corner-bouquet" />
+      </svg>
+    </div>
+    <div class="floral-corner floral-corner-br">
+      <svg viewBox="0 0 320 320" width="100%" height="100%">
+        <use href="#sym-corner-bouquet" />
+      </svg>
+    </div>
+
+    <!-- Top Garland Festoon Arch -->
+    <div class="floral-edge floral-edge-top">
+      <svg viewBox="0 0 520 100" width="100%" height="100%">
+        <!-- Draped Vine Swags -->
+        <path d="M 40,25 C 140,55 210,50 260,42 C 310,50 380,55 480,25" stroke="url(#ffGoldStem)" stroke-width="1.8"
+          fill="none" />
+        <path d="M 90,20 C 170,68 230,62 260,52 C 290,62 350,68 430,20" stroke="url(#ffGoldStem)" stroke-width="1"
+          stroke-dasharray="3,3" fill="none" opacity="0.7" />
+        <!-- Golden Eucalyptus Side Sprays -->
+        <use href="#sym-gold-eucalyptus" transform="translate(250, 42) scale(-0.65, 0.65) rotate(15)" />
+        <use href="#sym-gold-eucalyptus" transform="translate(270, 42) scale(0.65, 0.65) rotate(-15)" />
+        <!-- Flanking Rosebuds -->
+        <use href="#sym-rose-bud" transform="translate(200, 36) scale(0.6) rotate(-45)" />
+        <use href="#sym-rose-bud" transform="translate(320, 36) scale(-0.6, 0.6) rotate(-45)" />
+        <!-- Center Blossom -->
+        <use href="#sym-english-rose" transform="translate(260, 40) scale(0.68)" />
+        <!-- Baby's Breath Accents -->
+        <circle cx="235" cy="52" r="3.2" fill="url(#ffPearl)" />
+        <circle cx="285" cy="52" r="3.2" fill="url(#ffPearl)" />
+        <circle cx="170" cy="38" r="2.8" fill="url(#ffPearl)" />
+        <circle cx="350" cy="38" r="2.8" fill="url(#ffPearl)" />
+      </svg>
+    </div>
+
+    <!-- Bottom Garland Crescent Arch -->
+    <div class="floral-edge floral-edge-bottom">
+      <svg viewBox="0 0 460 80" width="100%" height="100%">
+        <!-- Upward Arching Stems -->
+        <path d="M 60,65 C 140,40 195,45 230,52 C 265,45 320,40 400,65" stroke="url(#ffGoldStem)" stroke-width="1.8"
+          fill="none" />
+        <!-- Side Sprays -->
+        <use href="#sym-gold-eucalyptus" transform="translate(220, 52) scale(-0.6, -0.6) rotate(10)" />
+        <use href="#sym-gold-eucalyptus" transform="translate(240, 52) scale(0.6, -0.6) rotate(-10)" />
+        <!-- Flanking Buds -->
+        <use href="#sym-rose-bud" transform="translate(175, 48) scale(0.55) rotate(135)" />
+        <use href="#sym-rose-bud" transform="translate(285, 48) scale(-0.55, 0.55) rotate(135)" />
+        <!-- Center Blossom -->
+        <use href="#sym-english-rose" transform="translate(230, 52) scale(0.62) rotate(180)" />
+        <!-- Pearl Accents -->
+        <circle cx="205" cy="42" r="3" fill="url(#ffPearl)" />
+        <circle cx="255" cy="42" r="3" fill="url(#ffPearl)" />
+      </svg>
+    </div>
+
+    <!-- Left & Right Delicate Side Vines -->
+    <div class="floral-side floral-side-left">
+      <svg viewBox="0 0 50 280" width="100%" height="100%">
+        <path d="M 8,0 C 28,50 4,110 22,160 C 35,200 10,240 18,280" stroke="url(#ffGoldStem)" stroke-width="2"
+          fill="none" />
+        <path d="M 12,40 C 22,35 28,42 22,50 Z" fill="url(#ffGoldLeaf)" />
+        <path d="M 18,120 C 30,115 36,122 28,130 Z" fill="url(#ffSageLeaf)" />
+        <path d="M 14,210 C 24,205 30,212 24,220 Z" fill="url(#ffGoldLeaf)" />
+        <use href="#sym-rose-bud" transform="translate(16, 90) scale(0.45) rotate(25)" />
+        <use href="#sym-rose-bud" transform="translate(22, 180) scale(0.42) rotate(40)" />
+        <circle cx="20" cy="140" r="2.8" fill="url(#ffPearl)" />
+      </svg>
+    </div>
+    <div class="floral-side floral-side-right">
+      <svg viewBox="0 0 50 280" width="100%" height="100%">
+        <path d="M 8,0 C 28,50 4,110 22,160 C 35,200 10,240 18,280" stroke="url(#ffGoldStem)" stroke-width="2"
+          fill="none" />
+        <path d="M 12,40 C 22,35 28,42 22,50 Z" fill="url(#ffGoldLeaf)" />
+        <path d="M 18,120 C 30,115 36,122 28,130 Z" fill="url(#ffSageLeaf)" />
+        <path d="M 14,210 C 24,205 30,212 24,220 Z" fill="url(#ffGoldLeaf)" />
+        <use href="#sym-rose-bud" transform="translate(16, 90) scale(0.45) rotate(25)" />
+        <use href="#sym-rose-bud" transform="translate(22, 180) scale(0.42) rotate(40)" />
+        <circle cx="20" cy="140" r="2.8" fill="url(#ffPearl)" />
+      </svg>
+    </div>
+
+    <!-- Ambient Drifting Petals -->
+    <div class="ambient-petals-container">
+      <span class="ambient-petal"></span>
+      <span class="ambient-petal"></span>
+      <span class="ambient-petal"></span>
+      <span class="ambient-petal"></span>
+      <span class="ambient-petal"></span>
+      <span class="ambient-petal"></span>
+    </div>
+  </div>
+
+  <!-- Optional Background Audio -->
+  <audio id="bgAudio" loop preload="none">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Skip Video Button (visible during video playback) -->
+  <button id="skipVideoBtn" class="skip-video-btn" aria-label="Skip to details">
+    Skip to Details
+  </button>
+
+  <!-- =================================================================
+       TAP TO OPEN INTRO GATE OVERLAY
+       ================================================================= -->
+  <div class="intro-gate-overlay" id="doorOpeningScreen">
+    <div class="gate-content">
+      <button class="tap-seal-btn" id="tapToOpenBtn" aria-label="Tap to Open">
+        <span class="pulse-ring"></span>
+        <span>Tap to Open</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       FLOATING AUDIO & REPLAY CONTROLS
+       ================================================================= -->
+  <div class="floating-controls">
+    <button class="control-circle-btn" id="toggleMusicBtn" data-tooltip="Play Wedding Music"
+      aria-label="Toggle background music">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z" />
+      </svg>
+    </button>
+    <button class="control-circle-btn active" id="togglePetalsBtn" data-tooltip="Pause Falling Petals"
+      aria-label="Toggle falling lavender petals">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M12 2.5C9 6.5 6 10.5 6 14.5c0 4 3 6.5 6 6.5s6-2.5 6-6.5c0-4-3-8-6-12z" />
+        <path d="M12 6c-1 3-2 6-1 9" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.2"
+          stroke-linecap="round" />
+      </svg>
+    </button>
+    <button class="control-circle-btn" id="replayVideoBtn" data-tooltip="Replay Opening Sequence"
+      aria-label="Replay door opening video">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round">
+        <path d="M1 4v6h6" />
+        <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Continuous Falling Lavender Petals Canvas -->
+  <canvas id="petalsCanvas" class="petals-canvas"></canvas>
+
+  <!-- Confetti Canvas for Celebrations -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- SVG Clip Path Definition for Heart-Shaped Elements -->
+  <svg width="0" height="0" style="position: absolute; width: 0; height: 0; pointer-events: none;" aria-hidden="true">
+    <defs>
+      <clipPath id="heartClip" clipPathUnits="objectBoundingBox">
+        <path d="M 0.5, 0.24 
+                 C 0.38, 0.08, 0.20, 0.06, 0.09, 0.18 
+                 C 0.005, 0.275, 0.025, 0.50, 0.16, 0.69 
+                 C 0.255, 0.825, 0.41, 0.91, 0.50, 0.99 
+                 C 0.59, 0.91, 0.745, 0.825, 0.84, 0.69 
+                 C 0.975, 0.50, 0.995, 0.275, 0.91, 0.18 
+                 C 0.80, 0.06, 0.62, 0.08, 0.50, 0.24 Z" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <!-- =================================================================
+       CENTER-STAGE STREAM (Blended with Background, Zero Cards)
+       Continuous Vertical Scroll with Cinematic Scroll Animations
+       ================================================================= -->
+  <main class="invite-stream-stage" id="streamStage">
+
+    <!-- Scrollable Center Stream (Masked at Top/Bottom to Blend Seamlessly) -->
+    <div class="stream-scroll-container" id="streamScrollContainer">
+      <div class="stream-content">
+
+        <!-- ==================== FIRST PAGE: "Vissakoti's Invite" & COUPLE ====================
+             Pulled up from bottom upon video completion.
+             Only "Vissakoti's Invite" (Big Gold Shine) + Bride & Groom names with a Heart symbol. -->
+        <section class="first-page-section" id="sectionFirstPage">
+
+          <!-- Middle Layer (Z-Axis): Romantic Ambient Image Backdrop (Behind Text, Above Card Background) -->
+          <div class="first-page-text-backdrop" aria-hidden="true">
+            <img src="couple_bouquet.webp" alt="" class="first-page-backdrop-img" loading="eager">
+          </div>
+
+          <div class="first-page-element anim-delay-1 ornament-cross-glow">✝</div>
+
+          <!-- Main Big Text with Golden Shine & Colour: "Vissakoti's Invite" -->
+          <h1 class="first-page-element anim-delay-2 vissakotis-invite-main">
+            <span class="gold-shine-text">Vissakoti's Invite</span>
+          </h1>
+
+          <div class="first-page-element anim-delay-3 gold-crest-accent">
+            <span class="crest-line"></span>
+            <span class="crest-diamond">❖</span>
+            <span class="crest-line"></span>
+          </div>
+
+          <!-- Bride & Groom Names with Golden Heart Symbol -->
+          <div class="first-page-element anim-delay-4 hero-names-flow">
+            <div class="bride-glow-name">Chi. Sow. Sravanthi</div>
+            <div class="names-heart-connector" aria-label="love">
+              <svg class="gold-heart-icon" viewBox="0 0 24 24" width="28" height="28">
+                <defs>
+                  <linearGradient id="goldHeartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fff5db" />
+                    <stop offset="30%" stop-color="#dfb76c" />
+                    <stop offset="70%" stop-color="#b88628" />
+                    <stop offset="100%" stop-color="#8c5d18" />
+                  </linearGradient>
+                </defs>
+                <path fill="url(#goldHeartGrad)"
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+            </div>
+            <div class="groom-glow-name">Chi. John Wesley</div>
+          </div>
+
+          <!-- Bouncing Scroll Down Prompt to enter scrolled celebration pages -->
+          <div class="first-page-element anim-delay-5 scroll-down-hint" id="scrollPrompt">
+            <span>Scroll for Celebration Details</span>
+            <div class="bounce-chevron">⌄</div>
+          </div>
+        </section>
+
+
+        <!-- ==================== SECTION 2: CELEBRATION, DATE & TIME (Revealed upon Scroll) ==================== -->
+        <section class="stream-section scroll-reveal" id="sectionCelebration">
+          <div class="ornament-cross-glow">✝</div>
+          <p class="blessing-eyebrow">With the Heavenly Blessings of God Almighty</p>
+          <p class="invitation-lead">
+            The Vissakoti Family cordially requests the honour of your presence and prayers at the Holy Matrimony of
+            their beloved daughter
+          </p>
+
+          <div class="gold-filigree-divider">✦ ❖ ✦</div>
+
+          <div class="section-label-gold">DATE & CELEBRATION</div>
+          <h2 class="stream-title">The Wedding Day</h2>
+
+          <div class="wedding-time-callout">
+            <div class="callout-date">THURSDAY, 26TH NOVEMBER 2026</div>
+            <div class="callout-time">10:00 AM IST ONWARDS</div>
+            <div class="callout-lunch">Followed by Celebratory Wedding Feast (Lunch)</div>
+          </div>
+
+          <!-- Real-Time Countdown (Floating Gold Numbers, Zero Cards) -->
+          <div class="blended-countdown" id="countdownTimer">
+            <div class="count-block">
+              <span class="count-val" id="days">00</span>
+              <span class="count-unit">DAYS</span>
+            </div>
+            <span class="count-colon">:</span>
+            <div class="count-block">
+              <span class="count-val" id="hours">00</span>
+              <span class="count-unit">HOURS</span>
+            </div>
+            <span class="count-colon">:</span>
+            <div class="count-block">
+              <span class="count-val" id="minutes">00</span>
+              <span class="count-unit">MINS</span>
+            </div>
+            <span class="count-colon">:</span>
+            <div class="count-block">
+              <span class="count-val" id="seconds">00</span>
+              <span class="count-unit">SECS</span>
+            </div>
+          </div>
+
+          <div class="hero-actions-row">
+            <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Holy+Matrimony:+Chi.+Sow.+Sravanthi+%26+Chi.+John+Wesley&dates=20261126T043000Z/20261126T093000Z&details=Christian+Wedding+of+Chi.+Sow.+Sravanthi+(Vissakoti+Family)+%26+Chi.+John+Wesley.+Ceremony+starts+at+10:00+AM+followed+by+wedding+lunch.&location=Bride%27s+Residence+(Vissakoti+Home),+https://www.google.com/maps?q=16.9538734,81.8224046"
+              target="_blank" rel="noopener noreferrer" class="btn-royal-gold">
+              Add to Calendar
+            </a>
+          </div>
+
+          <div class="gold-filigree-divider">✦ ❖ ✦</div>
+        </section>
+
+
+        <!-- ==================== SECTION 2: SCRIPTURE & COUPLE ==================== -->
+        <section class="stream-section scroll-reveal" id="sectionCouple">
+          <div class="ornament-cross-glow">✝</div>
+          <div class="section-label-gold">HOLY SCRIPTURE</div>
+
+          <blockquote class="blended-scripture-quote">
+            “Two are better than one, because they have a good return for their labor... A cord of three strands is not
+            quickly broken.”
+          </blockquote>
+          <div class="scripture-citation">Ecclesiastes 4:9, 12</div>
+
+          <div class="gold-filigree-divider">✦ ❖ ✦</div>
+
+          <!-- Heart-Shaped Interactive Scratch Card (Reveals Couple Photo) -->
+          <div class="heart-scratch-container" id="heartScratchContainer">
+            <div class="heart-scratch-frame">
+
+              <!-- Underneath: Romantic Couple Portrait Clipped to Heart -->
+              <div class="heart-photo-layer">
+                <img src="couple_heart.webp" alt="Chi. Sow. Sravanthi & Chi. John Wesley" class="heart-photo-img"
+                  loading="eager">
+              </div>
+
+              <!-- Over: Interactive Scratchable Champagne-Gold Foil Canvas -->
+              <canvas id="heartScratchCanvas" class="heart-scratch-canvas"></canvas>
+
+              <!-- Gold Filigree Heart Border Frame -->
+              <svg class="heart-frame-overlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="heartGoldBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#fff6dd" />
+                    <stop offset="25%" stop-color="#e5c073" />
+                    <stop offset="60%" stop-color="#b88628" />
+                    <stop offset="85%" stop-color="#fcedcb" />
+                    <stop offset="100%" stop-color="#8c5d18" />
+                  </linearGradient>
+                </defs>
+                <path d="M 50, 24 
+                         C 38, 8, 20, 6, 9, 18 
+                         C 0.5, 27.5, 2.5, 50, 16, 69 
+                         C 25.5, 82.5, 41, 91, 50, 99 
+                         C 59, 91, 74.5, 82.5, 84, 69 
+                         C 97.5, 50, 99.5, 27.5, 91, 18 
+                         C 80, 6, 62, 8, 50, 24 Z" fill="none" stroke="url(#heartGoldBorderGrad)" stroke-width="2.6" />
+              </svg>
+            </div>
+
+            <!-- Scratch Instruction / Reveal Status Badge -->
+            <button class="scratch-instruction-pill" id="scratchInstruction" aria-label="Scratch to reveal photo">
+              <span class="scratch-sparkle">✦</span>
+              <span class="scratch-text">Scratch the Heart to Reveal</span>
+              <span class="scratch-sparkle">✦</span>
+            </button>
+
+            <!-- Revealed Caption -->
+            <div class="revealed-couple-caption" id="revealedCoupleCaption">
+              <h3 class="revealed-names">Chi. Sow. Sravanthi <br> & <br> Chi. John Wesley</h3>
+            </div>
+          </div>
+
+          <p class="scripture-sub-blessing">
+            “Therefore what God has joined together, let no one separate.”<br>
+            <span style="font-size: 0.85em; color: #f5dfa8;">— Mark 10:9</span>
+          </p>
+        </section>
+
+
+        <!-- ==================== SECTION 3: THE VENUE ==================== -->
+        <section class="stream-section scroll-reveal" id="sectionVenue">
+          <div class="ornament-cross-glow">✝</div>
+          <div class="section-label-gold">LOCATION & DIRECTIONS</div>
+          <h2 class="stream-title">The Wedding Venue</h2>
+
+          <div class="venue-home-mark">
+            <span>Ceremony & Feast at Bride's Home</span>
+          </div>
+
+          <h3 class="venue-house-name">Vissakoti Residence</h3>
+
+          <div class="venue-directions-blurb">
+            <p><strong>VISSAKOTI Home</strong></p>
+            <p>At the Bride's Home</p>
+            <p class="venue-note"><em>Tap below for directions & live navigation</em></p>
+          </div>
+
+          <a href="https://www.google.com/maps?q=16.9538734,81.8224046&amp;z=17&amp;hl=en" id="googleMapsBtn"
+            target="_blank" rel="noopener noreferrer" class="btn-royal-gold">
+            Open in Google Maps
+          </a>
+        </section>
+
+
+        <!-- ==================== SECTION 4: FOOTER BENEDICTION ==================== -->
+        <footer class="stream-section stream-footer scroll-reveal">
+          <div class="ornament-cross-glow">✝</div>
+          <p class="footer-family-thanks">
+            “The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you.”<br>
+            <span style="font-size: 0.85em; color: #f5dfa8;">— Numbers 6:24-25</span>
+          </p>
+          <div class="gold-filigree-divider">✦ ✦ ✦</div>
+          <h4 class="footer-family-name">THE VISSAKOTI FAMILY</h4>
+          <p class="footer-couple-sig">Chi. Sow. Sravanthi <br> & <br> Chi. John Wesley</p>
+
+          <!-- Special Invitation from Oreo (Square Shiny Frame) -->
+          <div class="oreo-invite-wrap">
+            <div class="oreo-shiny-frame">
+              <div class="oreo-frame-glare"></div>
+              <div class="oreo-photo-inner">
+                <img src="oreo.webp" alt="Oreo" class="oreo-photo-img" loading="lazy">
+              </div>
+            </div>
+            <p class="oreo-caption">-A cute and special invitation from Oreo 🐾🤍</p>
+          </div>
+
+          <button class="btn-scroll-top" id="scrollTopBtn">Back to Top ↑</button>
+        </footer>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Main JavaScript -->
+  <script src="js/main.js?v=4.8"></script>
+</body>
+
+</html>
