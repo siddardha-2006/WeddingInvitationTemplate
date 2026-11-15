@@ -33,7 +33,6 @@ An elegant, mobile-first, responsive luxury reception invitation website designe
        - Crossing ~36% scratch threshold smoothly dissolves the remaining foil, fires celebratory confetti, and illuminates the couple's names with a *"Revealed with Love ✦"* badge.
      - **Section 3**: Reception Date (Thursday, Nov 26, 2026), Time (10:00 AM IST onwards), Lunch Feast, Live Real-Time Countdown Timer & Add to Calendar.
      - **Section 4**: Reception Venue at Bride's Home (Vissakoti Residence), Live Interactive Google Maps Preview & Open in Google Maps navigation button.
-     - **Section 5**: Numbers 6:24-25 Benediction, Vissakoti Family signature, **Oreo's Special Invitation** (square shiny gold frame with caption: *"-A cute and special invitation from Oreo 🐾🤍"*), and Back to Top button.
    - Each section glides up and fades in cleanly with scroll-driven reveal animations (`IntersectionObserver`).
 5. **Zero-Card Blended Typography (Stationery Card Integration)**:
    - **Zero cards, boxes, or white containers**.

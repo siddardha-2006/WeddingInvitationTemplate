@@ -1256,6 +1256,10 @@ body.state-revealed .first-page-text-backdrop {
 }
 
 /* ---------- Section 4: Venue ---------- */
+#sectionVenue {
+  padding-bottom: 95px;
+}
+
 .venue-home-mark {
   display: inline-flex;
   align-items: center;
