@@ -223,10 +223,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
   }
 
-  // Scroll down prompt click (scrolls smoothly from Page 1 to Celebration Details)
+  // Scroll down prompt click (scrolls smoothly from Page 1 to Scripture & Scratch)
   if (scrollPrompt) {
     scrollPrompt.addEventListener('click', () => {
-      const targetSec = document.getElementById('sectionCelebration') || document.getElementById('sectionCouple');
+      const targetSec = document.getElementById('sectionCouple') || document.getElementById('sectionCelebration');
       if (targetSec) {
         targetSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }

@@ -26,13 +26,13 @@ An elegant, mobile-first, responsive luxury reception invitation website designe
      - Bouncing indicator at the bottom: *"Scroll for Celebration Details ⌄"*
 4. **Scrolled Details Experience (Continuous Vertical Scroll)**:
    - Scrolling down smoothly unlocks the rest of the celebration experience:
-     - **Section 2**: Reception Date (Thursday, Nov 26, 2026), Time (10:00 AM IST onwards), Lunch Feast, Live Real-Time Countdown Timer & Add to Calendar.
-     - **Section 3**: Holy Scripture (*Ecclesiastes 4:9, 12* and *Mark 10:9*) and **Interactive Heart Scratch Card**:
+     - **Section 2**: Holy Scripture (*Ecclesiastes 4:9, 12* and *Mark 10:9*) and **Interactive Heart Scratch Card**:
        - Romantic heart-shaped photo frame underneath the Holy Scripture featuring the couple portrait (`couple_heart.webp`).
        - Overlaid with an interactive HTML5 Canvas champagne-gold scratch foil adorned with `✝`, *"SCRATCH TO REVEAL"*, and *"The Couple"*.
        - Guests scratch with finger (touch on mobile) or cursor (mouse drag on desktop) to reveal the portrait.
        - Crossing ~36% scratch threshold smoothly dissolves the remaining foil, fires celebratory confetti, and illuminates the couple's names with a *"Revealed with Love ✦"* badge.
-     - **Section 4**: Reception Venue at Bride's Home (Vissakoti Residence) & Open in Google Maps.
+     - **Section 3**: Reception Date (Thursday, Nov 26, 2026), Time (10:00 AM IST onwards), Lunch Feast, Live Real-Time Countdown Timer & Add to Calendar.
+     - **Section 4**: Reception Venue at Bride's Home (Vissakoti Residence), Live Interactive Google Maps Preview & Open in Google Maps navigation button.
      - **Section 5**: Numbers 6:24-25 Benediction, Vissakoti Family signature, **Oreo's Special Invitation** (square shiny gold frame with caption: *"-A cute and special invitation from Oreo 🐾🤍"*), and Back to Top button.
    - Each section glides up and fades in cleanly with scroll-driven reveal animations (`IntersectionObserver`).
 5. **Zero-Card Blended Typography (Stationery Card Integration)**:
