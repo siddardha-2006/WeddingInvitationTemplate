@@ -52,8 +52,8 @@ An elegant, mobile-first, responsive luxury reception invitation website designe
 10. **Live Floating Countdown Timer & Add to Calendar**:
     - Real-time countdown to Nov 26, 2026 10:00 AM with floating gold numerals (zero boxes).
     - Instant "Add to Google Calendar" button.
-11. **Background Music & Sound Effects**:
-    - Built-in elegant reception melodies / ambient sound toggle with SVG controls.
+11. **Background Music & Sound Controls**:
+    - Plays custom background audio track (`audio_bgm.mp3`) with automatic seamless looping and floating SVG music toggle button.
 12. **Continuous Falling Lavender Petals & Toggle Control**:
     - Delicate, realistic lavender flower petals gently tumbling, swaying, and drifting down across the screen with natural 3D tilt physics and soft lavender hues.
     - Floating circular toggle button in the control panel allows guests to easily pause or resume the falling petals effect.
@@ -75,7 +75,9 @@ WeddingInvite/
 │   │   ├── couple_heart.webp   # Couple portrait for heart scratch card
 │   │   ├── couple_bouquet.webp # First page romantic blurred bouquet vignette
 │   │   └── oreo.webp           # Oreo's special invitation photo
+│   ├── audio_bgm.mp3          # Copy of background audio track
 │   └── fonts/                 # Custom typography (if offline)
+├── audio_bgm.mp3              # Custom background audio track (BGM)
 ├── couple_bouquet.webp        # First page vignette (root copy)
 ├── couple_heart.webp          # Couple portrait (root copy)
 ├── oreo.webp                  # Oreo photo (root copy)

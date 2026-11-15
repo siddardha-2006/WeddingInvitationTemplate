@@ -27,8 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let isDetailsRevealed = false;
   let isVideoPlaying = false;
   let isMusicPlaying = false;
-  let audioContext = null;
-  let musicInterval = null;
   let fallbackTimer = null;
 
   // Set initial state
@@ -136,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (skipVideoBtn) {
     skipVideoBtn.addEventListener('click', (e) => {
       e.stopPropagation();
+      startReceptionAmbiance();
       revealWebsiteDetails();
     });
   }
@@ -382,111 +381,56 @@ document.addEventListener('DOMContentLoaded', () => {
   renderWishes();
 
   // ==========================================
-  // 6. BACKGROUND MUSIC (Web Audio Synth & MP3)
+  // 6. BACKGROUND MUSIC (audio_bgm.mp3)
   // ==========================================
 
-  function initAudio() {
-    if (!audioContext) {
-      const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      audioContext = new AudioCtx();
-    }
-    if (audioContext.state === 'suspended') {
-      audioContext.resume();
-    }
-  }
-
-  const melodyNotes = [
-    { freq: 293.66, name: 'D4', duration: 1.2 },
-    { freq: 369.99, name: 'F#4', duration: 1.0 },
-    { freq: 440.00, name: 'A4', duration: 1.2 },
-    { freq: 587.33, name: 'D5', duration: 1.6 },
-    { freq: 440.00, name: 'A4', duration: 1.0 },
-    { freq: 369.99, name: 'F#4', duration: 1.0 },
-    { freq: 493.88, name: 'B4', duration: 1.4 },
-    { freq: 587.33, name: 'D5', duration: 1.2 },
-    { freq: 440.00, name: 'A4', duration: 1.4 },
-    { freq: 392.00, name: 'G4', duration: 1.2 },
-    { freq: 369.99, name: 'F#4', duration: 1.2 },
-    { freq: 329.63, name: 'E4', duration: 1.6 }
-  ];
-
-  let currentMelodyStep = 0;
-
-  function playHarpTone(frequency, duration) {
-    if (!audioContext || !isMusicPlaying) return;
-
-    try {
-      const osc = audioContext.createOscillator();
-      const gainNode = audioContext.createGain();
-      const filter = audioContext.createBiquadFilter();
-
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(frequency, audioContext.currentTime);
-
-      filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(1400, audioContext.currentTime);
-
-      const now = audioContext.currentTime;
-      gainNode.gain.setValueAtTime(0, now);
-      gainNode.gain.linearRampToValueAtTime(0.08, now + 0.08);
-      gainNode.gain.exponentialRampToValueAtTime(0.0001, now + duration + 0.8);
-
-      osc.connect(filter);
-      filter.connect(gainNode);
-      gainNode.connect(audioContext.destination);
-
-      osc.start(now);
-      osc.stop(now + duration + 0.9);
-    } catch (e) {
-      console.warn('Audio note play error:', e);
-    }
-  }
-
   function startReceptionAmbiance() {
+    if (!bgAudio) return;
+
     isMusicPlaying = true;
     updateMusicButtonUI();
 
-    if (bgAudio && bgAudio.src && !bgAudio.src.endsWith('/')) {
-      const playPromise = bgAudio.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          return;
-        }).catch(() => {
-          startSynthMelody();
-        });
-        return;
-      }
+    bgAudio.volume = 0.75;
+    const playPromise = bgAudio.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        isMusicPlaying = true;
+        updateMusicButtonUI();
+      }).catch(err => {
+        console.warn('Audio play prevented until user interaction:', err);
+      });
     }
-
-    startSynthMelody();
-  }
-
-  function startSynthMelody() {
-    initAudio();
-    if (musicInterval) clearInterval(musicInterval);
-
-    musicInterval = setInterval(() => {
-      if (!isMusicPlaying) return;
-      const note = melodyNotes[currentMelodyStep];
-      playHarpTone(note.freq, note.duration);
-      currentMelodyStep = (currentMelodyStep + 1) % melodyNotes.length;
-    }, 1100);
   }
 
   function toggleMusic() {
+    if (!bgAudio) return;
+
     if (isMusicPlaying) {
       isMusicPlaying = false;
-      if (bgAudio) {
-        try { bgAudio.pause(); } catch(e) {}
-      }
-      if (musicInterval) clearInterval(musicInterval);
-      if (audioContext && audioContext.state === 'running') {
-        audioContext.suspend();
+      try {
+        bgAudio.pause();
+      } catch (e) {
+        console.warn('Audio pause error:', e);
       }
     } else {
-      startReceptionAmbiance();
+      isMusicPlaying = true;
+      try {
+        bgAudio.volume = 0.75;
+        bgAudio.play().catch(e => console.warn('Audio play error:', e));
+      } catch (e) {
+        console.warn('Audio play error:', e);
+      }
     }
     updateMusicButtonUI();
+  }
+
+  if (bgAudio) {
+    bgAudio.addEventListener('ended', () => {
+      if (isMusicPlaying) {
+        bgAudio.currentTime = 0;
+        bgAudio.play().catch(() => {});
+      }
+    });
   }
 
   const SVG_MUSIC_ON = '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>';
