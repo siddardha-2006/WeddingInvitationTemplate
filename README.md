@@ -63,26 +63,19 @@ An elegant, mobile-first, responsive luxury reception invitation website designe
 ## 📁 Project Structure
 ```
 WeddingInvite/
-├── index.html                 # Main website
+├── .gitignore                 # Git ignore file
 ├── README.md                  # Project documentation & editing guide
+├── index.html                 # Main website
+├── audio_bgm.mp3              # Custom background audio track (BGM)
+├── couple_bouquet.webp        # First page romantic blurred bouquet vignette
+├── couple_heart.webp          # Couple portrait for heart scratch card
+├── oreo.webp                  # Oreo's special invitation photo
+├── wedding_card_bg.jpg        # High-resolution revealed background image
+├── weddinginvitecard.mp4      # Background opening video asset
 ├── css/
 │   └── style.css              # Luxury lavender & gold styles
-├── js/
-│   └── main.js                # Video controller, countdown, RSVP, music
-├── assets/
-│   ├── images/
-│   │   ├── wedding_card_bg.jpg # High-resolution revealed background image
-│   │   ├── couple_heart.webp   # Couple portrait for heart scratch card
-│   │   ├── couple_bouquet.webp # First page romantic blurred bouquet vignette
-│   │   └── oreo.webp           # Oreo's special invitation photo
-│   ├── audio_bgm.mp3          # Copy of background audio track
-│   └── fonts/                 # Custom typography (if offline)
-├── audio_bgm.mp3              # Custom background audio track (BGM)
-├── couple_bouquet.webp        # First page vignette (root copy)
-├── couple_heart.webp          # Couple portrait (root copy)
-├── oreo.webp                  # Oreo photo (root copy)
-├── wedding_card_bg.jpg        # Root copy of background image
-└── weddinginvitecard.mp4      # Background opening video asset
+└── js/
+    └── main.js                # Video controller, countdown, RSVP, music
 ```
 
 ---
