@@ -247,38 +247,87 @@ document.addEventListener('DOMContentLoaded', () => {
   // Target: November 26, 2026, 10:00:00 AM IST (+05:30)
   // ==========================================
 
-  const receptionTargetTime = new Date('2026-11-26T10:00:00+05:30').getTime();
+ 
+// ==========================================
+// 4. REAL-TIME COUNTDOWN TIMERS
+// Wedding: November 25, 2026, 10:00 AM IST
+// Reception: November 26, 2026, 10:00 AM IST
+// ==========================================
 
-  const daysElem = document.getElementById('days');
-  const hoursElem = document.getElementById('hours');
-  const minutesElem = document.getElementById('minutes');
-  const secondsElem = document.getElementById('seconds');
+// Wedding Target Time
+const weddingTargetTime = new Date(
+  '2026-11-25T10:00:00+05:30'
+).getTime();
 
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = receptionTargetTime - now;
+// Reception Target Time
+const receptionTargetTime = new Date(
+  '2026-11-26T10:00:00+05:30'
+).getTime();
 
-    if (distance <= 0) {
-      if (daysElem) daysElem.innerText = '00';
-      if (hoursElem) hoursElem.innerText = '00';
-      if (minutesElem) minutesElem.innerText = '00';
-      if (secondsElem) secondsElem.innerText = '00';
-      return;
-    }
+// Wedding Countdown Elements
+const weddingDaysElem = document.getElementById('weddingDays');
+const weddingHoursElem = document.getElementById('weddingHours');
+const weddingMinutesElem = document.getElementById('weddingMinutes');
+const weddingSecondsElem = document.getElementById('weddingSeconds');
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+// Reception Countdown Elements
+const daysElem = document.getElementById('days');
+const hoursElem = document.getElementById('hours');
+const minutesElem = document.getElementById('minutes');
+const secondsElem = document.getElementById('seconds');
 
-    if (daysElem) daysElem.innerText = days < 10 ? '0' + days : days;
-    if (hoursElem) hoursElem.innerText = hours < 10 ? '0' + hours : hours;
-    if (minutesElem) minutesElem.innerText = minutes < 10 ? '0' + minutes : minutes;
-    if (secondsElem) secondsElem.innerText = seconds < 10 ? '0' + seconds : seconds;
+// Reusable Countdown Function
+function updateSingleCountdown(targetTime, elements) {
+  const now = new Date().getTime();
+  const distance = targetTime - now;
+
+  if (distance <= 0) {
+    elements.days.innerText = '00';
+    elements.hours.innerText = '00';
+    elements.minutes.innerText = '00';
+    elements.seconds.innerText = '00';
+    return;
   }
 
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+  const minutes = Math.floor(
+    (distance % (1000 * 60 * 60)) / (1000 * 60)
+  );
+  const seconds = Math.floor(
+    (distance % (1000 * 60)) / 1000
+  );
+
+  elements.days.innerText = String(days).padStart(2, '0');
+  elements.hours.innerText = String(hours).padStart(2, '0');
+  elements.minutes.innerText = String(minutes).padStart(2, '0');
+  elements.seconds.innerText = String(seconds).padStart(2, '0');
+}
+
+// Update Both Countdown Timers
+function updateCountdowns() {
+  updateSingleCountdown(weddingTargetTime, {
+    days: weddingDaysElem,
+    hours: weddingHoursElem,
+    minutes: weddingMinutesElem,
+    seconds: weddingSecondsElem
+  });
+
+  updateSingleCountdown(receptionTargetTime, {
+    days: daysElem,
+    hours: hoursElem,
+    minutes: minutesElem,
+    seconds: secondsElem
+  });
+}
+
+// Initial Update
+updateCountdowns();
+
+// Update Every Second
+setInterval(updateCountdowns, 1000);
 
   // ==========================================
   // 5. RSVP & BLESSINGS WALL (LocalStorage)
